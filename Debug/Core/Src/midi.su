@@ -1,0 +1,9 @@
+midi.c:146:13:null_event_cb	16	static
+midi.c:153:20:invoke_callback	16	static
+midi.c:187:17:rx_status_sys_realtime_byte	16	static
+midi.c:226:17:rx_status_sys_common_byte	16	static
+midi.c:233:17:rx_status_channel_byte	24	static
+midi.c:279:17:rx_data_byte	16	static
+midi.c:381:10:midi_init	16	static
+midi.c:390:10:midi_register_event_handler	16	static
+midi.c:401:10:midi_receive_byte	16	static

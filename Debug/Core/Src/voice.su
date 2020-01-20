@@ -1,0 +1,4 @@
+voice.c:15:5:get_voice_out	24	static
+voice.c:24:6:update_voice	24	static
+voice.c:60:6:set_frequency	24	static
+voice.c:69:8:interpolate_segment	56	static

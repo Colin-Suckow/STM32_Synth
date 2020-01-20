@@ -1,0 +1,2 @@
+midi_callbacks.c:16:6:note_on	16	static
+midi_callbacks.c:26:6:note_off	24	static
