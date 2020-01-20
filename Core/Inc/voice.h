@@ -8,6 +8,8 @@
 #ifndef INC_VOICE_H_
 #define INC_VOICE_H_
 
+#define VOICE_TOTAL 16
+
 #define SAMPLE_RATE 4000000
 #define PI 3.14159
 

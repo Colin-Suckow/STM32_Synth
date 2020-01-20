@@ -9,7 +9,6 @@
 #include "voice.h"
 
 extern struct voice voices[];
-extern int VOICE_TOTAL;
 int lastVoice = 0;
 //set_frequency(&voice1, midiNoteTable[data1]);
 

@@ -63,7 +63,7 @@ extern UART_HandleTypeDef huart1;
 /* USER CODE BEGIN EV */
 extern DAC_HandleTypeDef hdac;
 extern struct voice voices[];
-extern int VOICE_TOTAL;
+
 
 int out = 0;
 int activeCount = 0;

@@ -36,8 +36,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define VOICE_TOTAL_DEFINE 16
-int VOICE_TOTAL = VOICE_TOTAL_DEFINE;
+
 
 /* USER CODE END PD */
 
@@ -76,7 +75,7 @@ static void MX_USART1_UART_Init(void);
 
 uint8_t Rx_data[1];  //  creating a buffer of 1 byte
 
-struct voice voices[VOICE_TOTAL_DEFINE];
+struct voice voices[VOICE_TOTAL];
 
 
 /* USER CODE END 0 */
