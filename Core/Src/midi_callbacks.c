@@ -10,11 +10,9 @@
 
 extern struct voice voices[];
 int lastVoice = 0;
-//set_frequency(&voice1, midiNoteTable[data1]);
 
 void note_on(char chan, char data1, char data2) {
 	if(lastVoice >= VOICE_TOTAL) lastVoice = 0;
-	voices[lastVoice].frequency = midiFreqTable[data1];
 	set_frequency(&voices[lastVoice], midiFreqTable[data1]);
 	voices[lastVoice].gain = 0;
 	voices[lastVoice].state = attack;
@@ -23,12 +21,10 @@ void note_on(char chan, char data1, char data2) {
 
 
 void note_off(char chan, char data1, char data2) {
-
 	int freq = midiFreqTable[data1];
 	for(int i = 0; i < VOICE_TOTAL; i++) {
 		if(voices[i].frequency == freq && voices[i].state != inactive) voices[i].state = decay;
 	}
-
 }
 
 

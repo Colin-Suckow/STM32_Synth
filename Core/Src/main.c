@@ -54,9 +54,6 @@ UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 
-struct voice voice1 = {0,0,0,0};
-struct voice voice2 = {0,0,0,0};
-
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -134,7 +131,7 @@ int main(void)
   midi_register_event_handler(EVT_CHAN_NOTE_ON, &note_on);
   midi_register_event_handler(EVT_CHAN_NOTE_OFF, &note_off);
 
-  //HAL_UART_Receive(&huart2, Rx_data, 1);
+
   HAL_UART_Receive_IT(&huart1, Rx_data, sizeof(Rx_data));
 
 
@@ -150,11 +147,6 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	  //__disable_irq();
-
-
-
-		//__enable_irq();
   }
   /* USER CODE END 3 */
 }
@@ -350,10 +342,7 @@ static void MX_GPIO_Init(void)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-	//__disable_irq();
 	midi_receive_byte(Rx_data[0]);
-	//__enable_irq();
-	//HAL_UART_Transmit(&huart2, Rx_data, sizeof(Rx_data), 100);
 	HAL_UART_Receive_IT(&huart1, Rx_data, sizeof(Rx_data));
 }
 

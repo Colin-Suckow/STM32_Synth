@@ -13,11 +13,7 @@
 double interpolate_segment(double x0, int y0, double x1, int y1, double x);
 
 int get_voice_out(struct voice* voice) {
-
-	//TODO Implement interpolation
 	int val = wavetable_sine[(int) voice->currentAngle] - 2048;
-	//double cAngle = voice->currentAngle;
-	//int val = (int) interpolate_segment((int) cAngle, wavetable_sine[(int) cAngle] ,(int) cAngle + 1, wavetable_sine[(int) cAngle + 1], cAngle);
 	return (val * voice->gain);
 }
 
@@ -60,21 +56,4 @@ void update_voice(struct voice* voice) {
 void set_frequency(struct voice* voice, int freq) {
 	voice->angleDelta = freq/200.0;
 	voice->frequency = freq;
-}
-
-/**
-* Returns the interpolated y-value.
-* Saturates to y0 or y1 if x outside interval [x0, x1].
-*/
-double interpolate_segment(double x0, int y0, double x1, int y1, double x)
-{
-    double t;
-
-    if (x <= x0) { return y0; }
-    if (x >= x1) { return y1; }
-
-    t =  (x-x0);
-    t /= (x1-x0);
-
-    return y0 + t*(y1-y0);
 }

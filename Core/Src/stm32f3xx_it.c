@@ -217,37 +217,30 @@ void TIM2_IRQHandler(void)
 	activeCount = 0;
 
 
-	 for(int i = 0; i < VOICE_TOTAL; i++) {
-          update_voice(&voices[i]);
-		  out += get_voice_out(&voices[i]);
-		  //activeCount +=1;
-		}
+	for(int i = 0; i < VOICE_TOTAL; i++) {
+		update_voice(&voices[i]);
+		out += get_voice_out(&voices[i]);
+		//activeCount +=1;
+	}
 
 
-	 /*
-	 if(activeCount > 0) {
-		 out /= activeCount;
-	 }
-	 */
+	/*
+	if(activeCount > 0) {
+	 out /= activeCount;
+	}
+	*/
 
-	 out += 2048;
+	out += 2048;
 
-	 if(out > 4095) out = 4095;
-	 if(out < 0) out = 0;
+	if(out > 4095) out = 4095;
+	if(out < 0) out = 0;
 
-
-	  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, out);
+	HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, out);
 
 
   /* USER CODE END TIM2_IRQn 0 */
   HAL_TIM_IRQHandler(&htim2);
   /* USER CODE BEGIN TIM2_IRQn 1 */
-
-
-
-
-
-
 
   /* USER CODE END TIM2_IRQn 1 */
 }

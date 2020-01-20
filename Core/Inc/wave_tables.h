@@ -139,8 +139,6 @@ int wavetable_sine[] = {
 		1747,
 		1847,
 		1947,
-
-
 };
 
 #endif /* INC_WAVE_TABLES_H_ */
