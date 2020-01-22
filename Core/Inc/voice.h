@@ -15,9 +15,9 @@
 
 //ADSR Constants
 #define ATTACK_DELTA 0.02
-#define ATTACK_PEAK 0.4
+#define ATTACK_PEAK 0.3
 #define SUSTAIN_PEAK 0.2
-#define DECAY_DELTA 0.00001
+#define DECAY_DELTA 0.0001
 
 
 enum voice_state {

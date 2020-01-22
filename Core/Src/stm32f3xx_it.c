@@ -230,6 +230,8 @@ void TIM2_IRQHandler(void)
 	}
 	*/
 
+	out *= 0.5;
+
 	out += 2048;
 
 	if(out > 4095) out = 4095;
