@@ -13,7 +13,7 @@
 double interpolate_segment(double x0, int y0, double x1, int y1, double x);
 
 int get_voice_out(struct voice* voice) {
-	int val = wavetable_sine[(int) voice->currentAngle] - 2048;
+	int val = wavetable_sine[wavetable_sine[(int) (voice->currentAngle)]];
 	return (val * voice->gain);
 }
 
