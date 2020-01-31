@@ -40,6 +40,6 @@ int get_voice_out(struct voice* voice);
 
 void update_voice(struct voice* voice);
 
-void set_frequency(struct voice* voice, int freq);
+void set_frequency(struct voice* voice, float freq);
 
 #endif /* INC_VOICE_H_ */

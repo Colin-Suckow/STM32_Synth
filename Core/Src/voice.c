@@ -13,7 +13,8 @@
 double interpolate_segment(double x0, int y0, double x1, int y1, double x);
 
 int get_voice_out(struct voice* voice) {
-	int val = wavetable_sine[wavetable_sine[(int) (voice->currentAngle)]];
+	float phase = (wavetable_sine[(int) voice->currentAngle] + wavetable_sine[(int) voice->currentAngle + 120]) % WAVE_SAMPLE_COUNT;
+	int val = wavetable_sine[(int) (phase)];
 	return (val * voice->gain);
 }
 
@@ -53,7 +54,7 @@ void update_voice(struct voice* voice) {
 
 }
 
-void set_frequency(struct voice* voice, int freq) {
+void set_frequency(struct voice* voice, float freq) {
 	voice->angleDelta = freq/200.0;
 	voice->frequency = freq;
 }
